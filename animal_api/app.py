@@ -1,4 +1,6 @@
-from flask import Flask
+from flask import Flask, request, redirect
+from flask.helpers import url_for
+import requests
 import random
 
 app = Flask(__name__)
@@ -11,22 +13,16 @@ def animal():
     return choice
 
 
-animal = animal()
-print(animal)
-
-
-
-
 
 # animal noise generator route here
 @app.route("/animal", methods=["POST"])
 def noise():
+    animal= request.data.decode('utf-8')
     noises = {"Cat": "meow", "Dog": "woof", "Pig": "oink", "Cow": "moow", "Lion": "Roar!"}
     choice = noises[animal].title()
     return choice
 
-noise = noise()
-print(noise)
+
     
 
 
