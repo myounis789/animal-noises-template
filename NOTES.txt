@@ -1,0 +1,9 @@
+#Docker commands to get the setup running.
+
+go to localhost:5001 to test
+
+docker build -t (server/api) .
+docker network create animal
+docker run -d --network animal -p (5000 for api/ 5001 for server) --name (server/api) (image name server/api)
+
+Should all be running locally
