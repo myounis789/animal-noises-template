@@ -17,10 +17,11 @@ def home():
 def animal_get():
     if request.method == "GET":
     #needs to get animal from api server
-        return Response("Your animal is", mimetype="text/plain")
+        return Response("Your animal is ", mimetype="text/plain")
     #needs to get animal, and assign animal to correct noise.
     #return animal an noise.
     if request.method == ["POST"]:
+        return Response("and the noise it makes is " +  request.data.decode("utf-8"), mimetype='text/plain')
 
 # MAKES A POST REQUEST FOR ANIMAL NOISE
     #needs to get animal, and assign animal to correct noise.
